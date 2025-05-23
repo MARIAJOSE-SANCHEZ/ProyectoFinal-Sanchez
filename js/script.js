@@ -16,7 +16,7 @@ montoInput.addEventListener('input', () => {
         Swal.fire({
             icon: 'error',
             title: 'Formato incorrecto',
-            text: 'Ingresá solo números enteros sin puntos ni comas.'
+            text: 'Por favor, no ingrese puntos (.) ni coma (,).'
         });
         montoInput.value = valor.replace(/[.,]/g, '');
     }
@@ -29,11 +29,12 @@ mesesInput.addEventListener('input', () => {
         Swal.fire({
             icon: 'error',
             title: 'Formato incorrecto',
-            text: 'Ingresá solo números enteros sin puntos ni comas.'
+            text: 'Por favor, no ingrese puntos (.) ni coma (,).'
         });
         mesesInput.value = valor.replace(/[.,]/g, '');
     }
 });
+
 
 
 let tasas = {};
