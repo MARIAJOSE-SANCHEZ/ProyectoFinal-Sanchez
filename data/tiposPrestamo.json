@@ -1,0 +1,5 @@
+[
+  { "tipo": "personal", "tasa": 0.25 },
+  { "tipo": "automotor", "tasa": 0.15 },
+  { "tipo": "hipotecario", "tasa": 0.10 }
+]

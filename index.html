@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Préstamos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <h1>Simulador de Préstamos 💰</h1>
+    <p class="subtitulo">Este simulador permite calcular la cuota mensual y total a pagar de un préstamo ingresando el monto, el plazo y el tipo de préstamo.<br>⚠️ Ingresá los montos sin puntos ni comas ⚠️</p>
+
+    <div class="container">
+        <form id="formularioPrestamo">
+            <label for="monto">Monto del préstamo:</label>
+            <input type="number" id="monto" min="1" required>
+
+            <label for="meses">Cantidad de meses:</label>
+            <input type="number" id="meses" min="1" required>
+
+            <label for="tipo">Tipo de préstamo:</label>
+            <select id="tipo" required></select>
+
+            <button type="submit">Simular 💵</button>
+        </form>
+
+        <div class="resultado" id="resultado"></div>
+
+        <button id="borrarHistorial" class="borrar-btn">Borrar Historial</button>
+
+        <h2>Filtrar Historial</h2>
+        <div class="filtro-container">
+            <select id="tipoFiltro">
+                <option value="todos">Todos los tipos</option>
+            </select>
+            <input type="number" id="montoFiltro" placeholder="Monto mínimo" min="0">
+            <button id="aplicarFiltro" class="borrar-btn">Aplicar Filtro</button>
+        </div>
+
+        <div id="historial"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
