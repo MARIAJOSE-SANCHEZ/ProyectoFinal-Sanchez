@@ -6,6 +6,35 @@ const tipoFiltro = document.getElementById('tipoFiltro');
 const montoFiltro = document.getElementById('montoFiltro');
 const botonAplicarFiltro = document.getElementById('aplicarFiltro');
 const tipoSelect = document.getElementById('tipo');
+const montoInput = document.getElementById('monto');
+const mesesInput = document.getElementById('meses');
+
+// Validar si se ingresan puntos o comas en el campo MONTO
+montoInput.addEventListener('input', () => {
+    const valor = montoInput.value;
+    if (valor.includes('.') || valor.includes(',')) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Formato incorrecto',
+            text: 'Ingresá solo números enteros sin puntos ni comas.'
+        });
+        montoInput.value = valor.replace(/[.,]/g, '');
+    }
+});
+
+// Validar si se ingresan puntos o comas en el campo MESES
+mesesInput.addEventListener('input', () => {
+    const valor = mesesInput.value;
+    if (valor.includes('.') || valor.includes(',')) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Formato incorrecto',
+            text: 'Ingresá solo números enteros sin puntos ni comas.'
+        });
+        mesesInput.value = valor.replace(/[.,]/g, '');
+    }
+});
+
 
 let tasas = {};
 let historialPrestamos = JSON.parse(localStorage.getItem('historialPrestamos')) || [];
