@@ -3,7 +3,6 @@ const resultadoDiv = document.getElementById('resultado');
 const historialDiv = document.getElementById('historial');
 const botonBorrarHistorial = document.getElementById('borrarHistorial');
 const tipoFiltro = document.getElementById('tipoFiltro');
-const montoFiltro = document.getElementById('montoFiltro');
 const botonAplicarFiltro = document.getElementById('aplicarFiltro');
 const tipoSelect = document.getElementById('tipo');
 const montoInput = document.getElementById('monto');
@@ -157,16 +156,14 @@ botonBorrarHistorial.addEventListener('click', () => {
 
 botonAplicarFiltro.addEventListener('click', () => {
     const tipoSeleccionado = tipoFiltro.value;
-    const montoMinimo = parseFloat(montoFiltro.value) || 0;
 
     const historialFiltrado = historialPrestamos.filter(prestamo => {
-        const cumpleTipo = tipoSeleccionado === "todos" || prestamo.tipo === tipoSeleccionado;
-        const cumpleMonto = parseFloat(prestamo.monto) >= montoMinimo;
-        return cumpleTipo && cumpleMonto;
+        return tipoSeleccionado === "todos" || prestamo.tipo === tipoSeleccionado;
     });
 
     mostrarHistorialFiltrado(historialFiltrado);
 });
+
 
 function mostrarHistorialFiltrado(lista) {
     historialDiv.innerHTML = '';
